@@ -5,18 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Submission {
+public class Problem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long submissionId;
-    @ManyToOne
-    @JoinColumn(name = "problem_id")
-    private Problem problem;
+    private Long problemId;
+    private String problemName;
+    private String problemDescription;
     private String language;
-    private String code;
-    private String status;
 }
