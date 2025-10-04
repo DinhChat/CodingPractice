@@ -2,6 +2,7 @@ package com.soict.code.controllers;
 
 import com.soict.code.models.Submission;
 import com.soict.code.requests.SubmissionRequest;
+import com.soict.code.responses.ProblemResponse;
 import com.soict.code.services.SubmissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/submission")
 public class SubmissionController {
     private final SubmissionService submissionService;
 

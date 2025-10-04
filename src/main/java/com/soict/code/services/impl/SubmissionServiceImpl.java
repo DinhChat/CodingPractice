@@ -30,7 +30,6 @@ public class SubmissionServiceImpl implements SubmissionService {
     @Override
     public Submission saveSubmission(SubmissionRequest submissionReq) throws Exception {
         Submission submission = new Submission();
-        submission.setSubmissionId(submissionReq.getSubmissionId());
         submission.setLanguage(submissionReq.getLanguage());
         submission.setCode(submissionReq.getCode());
         submission.setStatus("QUEUED");
