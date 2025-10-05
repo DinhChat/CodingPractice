@@ -40,6 +40,8 @@ public class ProblemServiceImpl implements ProblemService {
         problem.setProblemName(request.getProblemName());
         problem.setProblemDescription(request.getProblemDescription());
         problem.setLanguage(request.getLanguage());
+        problem.setTimeLimitMs(request.getTimeLimitMs());
+        problem.setMemoryLimitMb(request.getMemoryLimitMb());
 
         return problemRepository.save(problem);
     }

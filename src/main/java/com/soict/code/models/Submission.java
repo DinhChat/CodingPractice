@@ -17,6 +17,7 @@ public class Submission {
     @JoinColumn(name = "problem_id")
     private Problem problem;
     private String language;
-    private String code;
+    private String submissionCode;
     private String status;
+    private String result;
 }

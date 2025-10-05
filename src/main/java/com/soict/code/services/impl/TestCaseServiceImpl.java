@@ -9,6 +9,8 @@ import com.soict.code.services.TestCaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TestCaseServiceImpl implements TestCaseService {
 
@@ -30,9 +32,16 @@ public class TestCaseServiceImpl implements TestCaseService {
         testCase.setInputData(req.getInputData());
         testCase.setExpectedOutput(req.getExpectedOutput());
         testCase.setIsSample(req.getIsSample());
-        testCase.setTimeLimitMs(req.getTimeLimitMs());
-        testCase.setMemoryLimitMb(req.getMemoryLimitMb());
 
         return testCaseRepository.save(testCase);
+    }
+
+    @Override
+    public List<TestCase> getTestCasesByProblemId(Long problemId) throws Exception {
+        List<TestCase> testCases = testCaseRepository.findByProblem_ProblemId(problemId);
+        if (testCases.isEmpty()) {
+            throw new Exception("No test cases found for problem id: " + problemId);
+        }
+        return testCases;
     }
 }

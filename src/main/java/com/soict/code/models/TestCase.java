@@ -21,6 +21,4 @@ public class TestCase {
     @Column(columnDefinition = "TEXT")
     private String expectedOutput;
     private Boolean isSample = false;
-    private Integer timeLimitMs;
-    private Integer memoryLimitMb;
 }

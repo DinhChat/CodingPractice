@@ -12,6 +12,4 @@ public class TestCaseRequest {
     private String inputData;
     private String expectedOutput;
     private Boolean isSample = false;
-    private Integer timeLimitMs;
-    private Integer memoryLimitMb;
 }

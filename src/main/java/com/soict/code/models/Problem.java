@@ -19,4 +19,6 @@ public class Problem {
     private String problemName;
     private String problemDescription;
     private String language;
+    private Integer timeLimitMs;
+    private Integer memoryLimitMb;
 }

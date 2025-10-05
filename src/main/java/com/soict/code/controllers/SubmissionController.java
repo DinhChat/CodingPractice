@@ -20,8 +20,8 @@ public class SubmissionController {
         this.submissionService = submissionService;
     }
 
-    @PostMapping("/submit")
-    public ResponseEntity<Submission> createMenuItem(
+    @PostMapping
+    public ResponseEntity<Submission> createSubmission(
             @RequestBody SubmissionRequest req
     ) throws Exception {
         Submission submission = submissionService.saveSubmission(req);
@@ -29,7 +29,10 @@ public class SubmissionController {
     }
 
     @GetMapping("/result/{id}")
-    public Submission getResult(@PathVariable Long id) throws Exception {
-        return submissionService.findBySubmissionId(id);
+    public ResponseEntity<Submission> getSubmission(
+            @PathVariable Long id
+    ) throws Exception {
+        Submission submission = submissionService.findBySubmissionId(id);
+        return new ResponseEntity<>(submission, HttpStatus.OK);
     }
 }

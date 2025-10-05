@@ -6,5 +6,5 @@ import lombok.Data;
 public class SubmissionRequest {
     private Long problemId;
     private String language;
-    private String code;
+    private String submissionCode;
 }
