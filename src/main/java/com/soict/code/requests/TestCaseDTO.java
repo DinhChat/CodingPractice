@@ -7,10 +7,10 @@ import lombok.Data;
 public class TestCaseDTO {
     @JsonProperty("input")
     private String inputData;
-    @JsonProperty("expected_output)
+    @JsonProperty("expected_output")
     private String expectedOutput;
 
-    public TestCaseDTO(String inputData, String expectedOutput, Boolean isSample) {
+    public TestCaseDTO(String inputData, String expectedOutput) {
         this.inputData = inputData;
         this.expectedOutput = expectedOutput;
     }
