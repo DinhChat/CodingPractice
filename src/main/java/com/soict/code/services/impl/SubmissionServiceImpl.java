@@ -67,7 +67,7 @@ public class SubmissionServiceImpl implements SubmissionService {
 
         List<TestCase> testCases = testCaseRepository.findByProblem_ProblemId(submissionReq.getProblemId());
         List<TestCaseDTO> testCaseDTOs = testCases.stream()
-                .map(tc -> new TestCaseDTO(tc.getInputData(), tc.getExpectedOutput(),tc.getIsSample()))
+                .map(tc -> new TestCaseDTO(tc.getInputData(), tc.getExpectedOutput()))
                 .toList();
 
 
