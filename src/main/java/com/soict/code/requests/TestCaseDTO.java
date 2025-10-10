@@ -1,16 +1,17 @@
 package com.soict.code.requests;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
 public class TestCaseDTO {
+    @JsonProperty("input")
     private String inputData;
+    @JsonProperty("expected_output)
     private String expectedOutput;
-    private Boolean isSample = false;
 
     public TestCaseDTO(String inputData, String expectedOutput, Boolean isSample) {
         this.inputData = inputData;
         this.expectedOutput = expectedOutput;
-        this.isSample = isSample;
     }
 }
